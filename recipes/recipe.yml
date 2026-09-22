@@ -21,6 +21,7 @@ modules:
       copr:
         - atim/starship
         - scottames/ghostty
+        - ashbuk/Hyprland-Fedora
     install:
       packages:
         # Desktop & Wayland Compositor
