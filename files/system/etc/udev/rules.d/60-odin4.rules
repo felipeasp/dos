@@ -1,0 +1,2 @@
+# Samsung mobile devices in Download mode for Odin4
+SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", MODE="0666", TAG+="uaccess"

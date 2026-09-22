@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Bifrost
+Comment=Samsung Firmware Downloader
+Exec=/usr/local/bin/bifrost
+Icon=bifrost
+Terminal=false
+Type=Application
+Categories=Utility;Development;
