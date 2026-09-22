@@ -4,7 +4,7 @@
 Fedora Atomic image built with BlueBuild.
 
 ## Desktop
-- Hyprland
+- Umbriel
 - Noctalia
 - Ghostty
 

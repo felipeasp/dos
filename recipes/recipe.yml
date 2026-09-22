@@ -1,7 +1,7 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 name: dos
-description: DOS — Custom Fedora Atomic image for Acer Nitro 5 with Hyprland and Noctalia
+description: DOS — Custom Fedora Atomic image for Acer Nitro 5 with Umbriel and Noctalia
 
 base-image: ghcr.io/ublue-os/base-main
 image-version: latest
@@ -12,21 +12,28 @@ modules:
       - source: system
         destination: /
 
-  - type: akmods
-    install: []
-    nvidia-driver: nvidia
-
   - type: dnf
     repos:
-      copr:
-        - atim/starship
-        - scottames/ghostty
-        - ashbuk/Hyprland-Fedora
-    install:
+      files:
+        - https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
+    remove:
+      auto-remove: false
       packages:
-        # Desktop & Wayland Compositor
-        - hyprland
-        - xdg-desktop-portal-hyprland
+        - ibus
+        - ibus-libs
+        - ibus-gtk
+        - ibus-chewing
+    install:
+      exclude:
+        - ibus
+        - ibus-libs
+        - ibus-gtk*
+        - ibus-chewing*
+      packages:
+        # Desktop & Wayland Compositor: Umbriel + Noctalia
+        # (xdg-desktop-portal-umbriel-nightly and xwayland-satellite are auto-resolved as Requires of umbriel-nightly)
+        - umbriel-nightly
+        - xdg-desktop-portal-gtk
         - ghostty
         - noctalia
         - wl-clipboard
